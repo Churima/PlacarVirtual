@@ -16,32 +16,12 @@ import com.example.placarvirtual.ui.theme.PlacarVirtualTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
+        val team1 = Score("Minecraft", 3)
+        val team2 = Score("Terraria", 4)
+
         setContent {
-            PlacarVirtualTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+            ScoreView(team1, team2)
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    PlacarVirtualTheme {
-        Greeting("Android")
     }
 }
